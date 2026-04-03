@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sai Priya Katta — Troutman Pepper Locke</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+:root{
+  --red:#8B1A1A;
+  --red-light:#F5EEEE;
+  --cream:#FAF8F5;
+  --white:#FFFFFF;
+  --text:#1A1410;
+  --muted:#7A7268;
+  --rule:rgba(139,26,26,0.2);
+}
+body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:0 72px;height:60px;background:rgba(250,248,245,0.96);border-bottom:1px solid var(--rule);}
+.logo{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--text);letter-spacing:0.03em;}
+.logo em{font-style:italic;color:var(--red);}
+.nav-r{display:flex;gap:36px;align-items:center;}
+.nav-r a{font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color 0.2s;}
+.nav-r a:hover{color:var(--red);}
+.nav-cta{color:var(--red)!important;border-bottom:1px solid var(--red)!important;padding-bottom:1px;}
+
+/* FLOAT */
+.float{position:fixed;bottom:28px;right:28px;z-index:300;display:flex;align-items:center;gap:8px;background:var(--red);color:var(--white);padding:11px 20px;font-size:0.74rem;font-weight:700;letter-spacing:0.06em;text-decoration:none;box-shadow:0 4px 20px rgba(139,26,26,0.3);transition:background 0.2s;}
+.float:hover{background:#6B1212;}
+.fdot{width:6px;height:6px;border-radius:50%;background:var(--white);animation:blink 1.5s infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+
+/* ─── HERO ─── full width editorial */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 72px 80px;position:relative;overflow:hidden;background:var(--white);}
+.hero-bg-text{position:absolute;top:50%;left:72px;transform:translateY(-55%);font-family:'Cormorant Garamond',serif;font-size:clamp(12rem,22vw,22rem);font-weight:700;line-height:0.85;color:rgba(139,26,26,0.04);pointer-events:none;user-select:none;letter-spacing:-0.03em;}
+.hero-rule{position:absolute;top:0;left:0;right:0;height:4px;background:var(--red);}
+.hero-eyebrow{font-size:0.7rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--red);margin-bottom:24px;display:flex;align-items:center;gap:12px;}
+.hero-eyebrow::before{content:'';width:36px;height:1px;background:var(--red);}
+.hero-name{font-family:'Cormorant Garamond',serif;font-size:clamp(4rem,9vw,8rem);font-weight:700;line-height:0.9;color:var(--text);letter-spacing:-0.02em;}
+.hero-name em{font-style:italic;color:var(--red);}
+.hero-tagline{font-family:'Cormorant Garamond',serif;font-size:clamp(1.2rem,2.5vw,1.8rem);font-weight:400;font-style:italic;color:var(--muted);margin-top:24px;max-width:640px;line-height:1.5;}
+.hero-bottom{display:flex;align-items:flex-end;justify-content:space-between;margin-top:48px;padding-top:32px;border-top:1px solid var(--rule);}
+.hero-meta{display:flex;gap:48px;}
+.hero-meta-item{}
+.hero-meta-label{font-size:0.65rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
+.hero-meta-val{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;color:var(--text);line-height:1;}
+.hero-meta-sub{font-size:0.72rem;font-weight:300;color:var(--muted);margin-top:4px;}
+.hero-btns{display:flex;gap:14px;}
+.btn-red{background:var(--red);color:var(--white);padding:12px 28px;font-size:0.78rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;display:inline-block;transition:background 0.2s;}
+.btn-red:hover{background:#6B1212;}
+.btn-ghost{background:transparent;color:var(--red);border:1px solid var(--red);padding:11px 28px;font-size:0.78rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;display:inline-block;transition:all 0.2s;}
+.btn-ghost:hover{background:var(--red);color:var(--white);}
+
+/* ─── INTRO STRIP ─── */
+.intro-strip{background:var(--red);padding:48px 72px;}
+.intro-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 2fr;gap:64px;align-items:center;}
+.intro-label{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:700;color:rgba(255,255,255,0.2);line-height:1;}
+.intro-text{font-size:1.05rem;font-weight:300;color:rgba(255,255,255,0.85);line-height:1.8;}
+.intro-text strong{color:var(--white);font-weight:700;}
+
+/* ─── NUMBERS ─── horizontal strip */
+.numbers{background:var(--cream);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);}
+.numbers-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);}
+.number-item{padding:48px 36px;border-right:1px solid var(--rule);transition:background 0.2s;cursor:default;}
+.number-item:last-child{border-right:none;}
+.number-item:hover{background:var(--white);}
+.num-big{font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:700;color:var(--red);line-height:1;margin-bottom:10px;}
+.num-label{font-size:0.82rem;font-weight:700;color:var(--text);margin-bottom:6px;}
+.num-sub{font-size:0.74rem;font-weight:300;color:var(--muted);line-height:1.5;}
+
+/* ─── EXPERIENCE TIMELINE ─── */
+.timeline-section{padding:96px 72px;background:var(--white);}
+.section-inner{max-width:1100px;margin:0 auto;}
+.section-eyebrow{font-size:0.68rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--red);margin-bottom:8px;display:flex;align-items:center;gap:10px;}
+.section-eyebrow::before{content:'';width:20px;height:1px;background:var(--red);}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;color:var(--text);margin-bottom:56px;line-height:1.1;}
+
+.timeline{position:relative;padding-left:32px;}
+.timeline::before{content:'';position:absolute;left:0;top:8px;bottom:8px;width:1px;background:var(--rule);}
+.tl-item{position:relative;margin-bottom:52px;}
+.tl-item::before{content:'';position:absolute;left:-36px;top:8px;width:9px;height:9px;border-radius:50%;background:var(--red);border:2px solid var(--white);box-shadow:0 0 0 1px var(--red);}
+.tl-dates{font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--red);margin-bottom:6px;}
+.tl-role{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700;color:var(--text);margin-bottom:4px;}
+.tl-company{font-size:0.8rem;font-weight:400;color:var(--muted);margin-bottom:14px;}
+.tl-bullets{list-style:none;}
+.tl-bullets li{font-size:0.82rem;font-weight:300;color:var(--text);line-height:1.7;padding-left:14px;position:relative;margin-bottom:6px;}
+.tl-bullets li::before{content:'—';position:absolute;left:0;color:var(--red);font-size:0.7rem;}
+
+/* ─── CASE STUDIES ─── magazine grid */
+.cases-section{padding:96px 72px;background:var(--cream);}
+.cases-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);margin-top:0;}
+.case-card{background:var(--white);padding:40px;transition:background 0.2s;position:relative;overflow:hidden;}
+.case-card:hover{background:var(--red-light);}
+.case-card::after{content:'';position:absolute;top:0;left:0;bottom:0;width:3px;background:var(--red);transform:scaleY(0);transform-origin:bottom;transition:transform 0.4s;}
+.case-card:hover::after{transform:scaleY(1);}
+.case-num{font-family:'Cormorant Garamond',serif;font-size:4rem;font-weight:700;color:rgba(139,26,26,0.08);line-height:1;margin-bottom:-10px;}
+.case-tag{font-size:0.66rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--red);margin-bottom:12px;display:block;}
+.case-title{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:700;color:var(--text);margin-bottom:12px;line-height:1.35;}
+.case-body{font-size:0.8rem;font-weight:300;color:var(--muted);line-height:1.75;margin-bottom:20px;}
+.case-result{display:flex;align-items:baseline;gap:10px;padding-top:16px;border-top:1px solid var(--rule);}
+.case-result-n{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;color:var(--red);}
+.case-result-t{font-size:0.74rem;font-weight:300;color:var(--muted);line-height:1.4;}
+
+/* ─── SKILLS ─── two-col layout */
+.skills-section{padding:96px 72px;background:var(--white);}
+.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:0;}
+.skill-group{padding:32px;border:1px solid var(--rule);transition:border-color 0.2s,transform 0.3s,box-shadow 0.3s;}
+.skill-group:hover{border-color:var(--red);transform:translateY(-4px) perspective(400px) rotateX(2deg);box-shadow:0 12px 32px rgba(139,26,26,0.08),0 3px 0 var(--red);}
+.skill-group-title{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:700;color:var(--red);margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--rule);}
+.skill-list{font-size:0.8rem;font-weight:300;color:var(--text);line-height:2;}
+
+/* ─── CTA ─── editorial full-width */
+.cta-section{padding:96px 72px;background:var(--text);position:relative;overflow:hidden;}
+.cta-section::before{content:'"';position:absolute;top:-20px;left:60px;font-family:'Cormorant Garamond',serif;font-size:40rem;font-weight:700;color:rgba(255,255,255,0.02);line-height:1;pointer-events:none;}
+.cta-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.cta-left{}
+.cta-eyebrow{font-size:0.68rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(139,26,26,0.7);margin-bottom:12px;}
+.cta-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:700;color:var(--white);line-height:1.1;}
+.cta-title em{font-style:italic;color:rgba(200,120,120,0.9);}
+.cta-right{display:flex;flex-direction:column;gap:20px;}
+.cta-p{font-size:0.9rem;font-weight:300;color:rgba(255,255,255,0.5);line-height:1.8;}
+.cta-p strong{color:var(--white);font-weight:400;}
+.cta-btns{display:flex;gap:14px;flex-wrap:wrap;margin-top:8px;}
+.cta-contacts{display:flex;flex-direction:column;gap:10px;margin-top:8px;}
+.cta-contact{display:flex;align-items:center;gap:10px;font-size:0.78rem;font-weight:300;color:rgba(255,255,255,0.45);text-decoration:none;transition:color 0.2s;}
+.cta-contact:hover{color:rgba(200,120,120,0.9);}
+.cta-contact-ico{color:rgba(139,26,26,0.7);font-size:0.8rem;}
+
+@media(max-width:900px){
+  nav{padding:0 24px;}.nav-r{display:none;}
+  .hero,.timeline-section,.cases-section,.skills-section,.cta-section{padding-left:24px;padding-right:24px;}
+  .intro-strip{padding:40px 24px;}
+  .hero-bottom,.intro-inner,.cases-grid,.skills-grid,.cta-inner{grid-template-columns:1fr;}
+  .hero-meta{flex-wrap:wrap;gap:24px;}
+  .numbers-inner{grid-template-columns:1fr 1fr;}
+  .number-item{border-bottom:1px solid var(--rule);}
+}
+
+/* ─── 3D EFFECTS ─── */
+.number-item {
+  transition: transform 0.3s, box-shadow 0.3s, background 0.2s;
+  transform-style: preserve-3d;
+}
+.number-item:hover {
+  transform: perspective(500px) rotateX(5deg) rotateY(-2deg) translateY(-6px);
+  box-shadow: 6px 12px 28px rgba(139,26,26,0.1), 0 3px 0 var(--red);
+}
+
+.case-card {
+  transition: transform 0.3s, box-shadow 0.3s, background 0.2s;
+  transform-style: preserve-3d;
+}
+.case-card:hover {
+  transform: perspective(500px) rotateY(-2deg) rotateX(2deg) translateY(-5px);
+  box-shadow: 8px 14px 36px rgba(139,26,26,0.1), 3px 3px 0 rgba(139,26,26,0.15);
+}
+
+.tl-item {
+  transition: transform 0.2s;
+}
+.tl-item:hover {
+  transform: translateX(8px);
+}
+
+.skill-group {
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.2s;
+  transform-style: preserve-3d;
+}
+.skill-group:hover {
+  transform: translateY(-6px) perspective(400px) rotateX(3deg);
+  box-shadow: 0 14px 32px rgba(139,26,26,0.09), 0 3px 0 var(--red);
+  border-color: var(--red);
+}
+
+/* Floating orb animation in hero */
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.orb-1 {
+  width: 400px; height: 400px;
+  right: -100px; top: 10%;
+  background: radial-gradient(circle, rgba(139,26,26,0.06) 0%, transparent 70%);
+  animation: orbFloat 8s ease-in-out infinite;
+}
+.orb-2 {
+  width: 250px; height: 250px;
+  right: 15%; top: 30%;
+  background: radial-gradient(circle, rgba(139,26,26,0.04) 0%, transparent 70%);
+  animation: orbFloat 11s ease-in-out infinite reverse;
+}
+.orb-3 {
+  width: 150px; height: 150px;
+  right: 5%; top: 60%;
+  background: radial-gradient(circle, rgba(139,26,26,0.05) 0%, transparent 70%);
+  animation: orbFloat 6s ease-in-out infinite;
+  animation-delay: 2s;
+}
+@keyframes orbFloat {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-30px) scale(1.05); }
+}
+
+/* Animated red accent line on hero */
+.hero-rule::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 30%;
+  height: 100%;
+  background: rgba(255,255,255,0.4);
+  animation: lineSlide 3s ease-out forwards;
+}
+@keyframes lineSlide {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(400%); }
+}
+
+/* Stagger fade-in for number items */
+.number-item:nth-child(1) { animation: fadeUp 0.6s ease 0.1s both; }
+.number-item:nth-child(2) { animation: fadeUp 0.6s ease 0.2s both; }
+.number-item:nth-child(3) { animation: fadeUp 0.6s ease 0.3s both; }
+.number-item:nth-child(4) { animation: fadeUp 0.6s ease 0.4s both; }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Hero name 3D text depth */
+.hero-name {
+  text-shadow: 2px 2px 0 rgba(139,26,26,0.06), 4px 4px 0 rgba(139,26,26,0.04), 6px 6px 0 rgba(139,26,26,0.02);
+}
+
+/* Timeline dot pulse */
+.tl-item::before {
+  animation: dotPulse 3s ease-in-out infinite;
+}
+@keyframes dotPulse {
+  0%, 100% { box-shadow: 0 0 0 1px var(--red); }
+  50% { box-shadow: 0 0 0 4px rgba(139,26,26,0.15); }
+}
+
+</style>
+</head>
+<body>
+
+<a href="/cdn-cgi/l/email-protection#bad1dbcecedbc9db8bfad7c9cf94dfdecf85c9cfd8d0dfd9ce87eec8d5cfced7dbd49aeadfcacadfc89af6d5d9d1df9ae9dfd4d3d5c89aeac8d5d9cfc8dfd7dfd4ce9af5cadfc8dbced3d5d4c99afbd4dbd6c3c9ce" class="float">
+  <div class="fdot"></div>Available this week
+</a>
+
+<nav>
+  <div class="logo">Sai Priya <em>Katta</em></div>
+  <div class="nav-r">
+    <a href="#numbers">Numbers</a>
+    <a href="#experience">Experience</a>
+    <a href="#cases">Case Studies</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact" class="nav-cta">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-rule"></div>
+  <div class="hero-orb orb-1"></div>
+  <div class="hero-orb orb-2"></div>
+  <div class="hero-orb orb-3"></div>
+  <div class="hero-bg-text">SPK</div>
+  <div class="hero-eyebrow">Senior Procurement Operations Analyst, Troutman Pepper Locke LLP</div>
+  <div class="hero-name">Sai Priya<br><em>Katta</em></div>
+  <div class="hero-tagline">Supply chain and vendor lifecycle professional bringing 3+ years of procurement operations, compliance, and process governance experience to one of the 50 largest law firms in the United States.</div>
+  <div class="hero-bottom">
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <div class="hero-meta-label">Degree</div>
+        <div class="hero-meta-val">MBA</div>
+        <div class="hero-meta-sub">Supply Chain, MSU · 3.77 GPA</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="hero-meta-label">Experience</div>
+        <div class="hero-meta-val">3+ yrs</div>
+        <div class="hero-meta-sub">Procurement and vendor management</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="hero-meta-label">Clients Supported</div>
+        <div class="hero-meta-val">30+</div>
+        <div class="hero-meta-sub">Manufacturing, trading, construction</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="hero-meta-label">Available</div>
+        <div class="hero-meta-val">June 2026</div>
+        <div class="hero-meta-sub">Open to relocation — US</div>
+      </div>
+    </div>
+    <div class="hero-btns">
+      <a href="#cases" class="btn-red">See My Work</a>
+      <a href="#contact" class="btn-ghost">Get In Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO STRIP -->
+<div class="intro-strip">
+  <div class="intro-inner">
+    <div class="intro-label">Why<br>Troutman<br>Pepper</div>
+    <div class="intro-text">
+      A firm of Troutman Pepper Locke's scale — 1,600+ attorneys, 30+ offices, clients across every major industry — requires procurement operations that are <strong>rigorous, compliant, and built to scale</strong>. I have spent three years designing exactly that: vendor lifecycle systems, due diligence frameworks, SOP libraries, and reporting tools that give complex organizations the visibility and control they need. I am ready to bring that discipline to your procurement team.
+    </div>
+  </div>
+</div>
+
+<!-- NUMBERS -->
+<div id="numbers" class="numbers">
+  <div class="numbers-inner">
+    <div class="number-item">
+      <div class="num-big">$70K+</div>
+      <div class="num-label">Vendor discrepancies resolved</div>
+      <div class="num-sub">ERP audits and vendor reconciliation across 30+ client operations</div>
+    </div>
+    <div class="number-item">
+      <div class="num-big">$50K+</div>
+      <div class="num-label">Compliance risk mitigated</div>
+      <div class="num-sub">Financial, operational, and regulatory due diligence reviews</div>
+    </div>
+    <div class="number-item">
+      <div class="num-big">50%</div>
+      <div class="num-label">Procurement delays cut</div>
+      <div class="num-sub">Structured PO workflows and demand planning tools eliminated emergency orders</div>
+    </div>
+    <div class="number-item">
+      <div class="num-big">30+</div>
+      <div class="num-label">Clients supported</div>
+      <div class="num-sub">Vendor lifecycle, SOP development, and compliance across diverse sectors</div>
+    </div>
+  </div>
+</div>
+
+<!-- EXPERIENCE TIMELINE -->
+<section id="experience" class="timeline-section">
+  <div class="section-inner">
+    <div class="section-eyebrow">Professional Experience</div>
+    <div class="section-title">Three years.<br>Real procurement operations.</div>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dates">Nov 2021 — Apr 2024</div>
+        <div class="tl-role">Audit Associate, Supply Chain</div>
+        <div class="tl-company">Y P Reddy and Associates, India</div>
+        <ul class="tl-bullets">
+          <li>Managed vendor lifecycle activities for 30+ clients across manufacturing and trading, conducting financial, operational, and regulatory due diligence reviews, identifying $70K+ in ERP discrepancies and mitigating $50K+ in compliance risk exposure</li>
+          <li>Built centralized vendor performance tracking frameworks monitoring SLA adherence and delivery compliance, delivering corrective action roadmaps with clear accountability checkpoints</li>
+          <li>Developed and implemented SOPs and procurement documentation templates standardizing vendor management processes, improving consistency and compliance across all client engagements</li>
+          <li>Drove a 25% reduction in excess inventory through cycle counts, reconciliations, and structured audit recommendations translated into actionable leadership reports</li>
+        </ul>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dates">Oct 2022 — Apr 2024</div>
+        <div class="tl-role">Supply Chain Analyst, Construction Operations</div>
+        <div class="tl-company">Sai Manasa Homes, India</div>
+        <ul class="tl-bullets">
+          <li>Managed end-to-end vendor onboarding, coordination, and offboarding for 10+ suppliers, serving as the primary liaison between vendors and internal project stakeholders and reducing payment delays to under 2 weeks</li>
+          <li>Executed purchase orders, tracked expenditures, and reconciled invoices in Tally ERP; built a Power BI dashboard resolving $30K+ in billing discrepancies within one week</li>
+          <li>Led RFQ processes across 4 projects comparing 3-5 vendors per cycle, standardizing selection through Excel cost comparison matrices; reduced last-minute orders by 50%</li>
+          <li>Supported contract execution by tracking key pricing terms, renewal dates, and approval workflows in partnership with project leadership and finance</li>
+        </ul>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dates">Aug 2025 — Dec 2025</div>
+        <div class="tl-role">Market Research Intern</div>
+        <div class="tl-company">Annoviant, Inc., USA</div>
+        <ul class="tl-bullets">
+          <li>Built Power BI dashboards mapping cardiovascular deal activities across 35+ competitor pipelines, supporting investment prioritization and partnership strategy decisions for senior leadership</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section id="cases" class="cases-section">
+  <div class="section-inner">
+    <div class="section-eyebrow">Case Studies</div>
+    <div class="section-title">Four problems.<br>Four solutions.</div>
+  </div>
+
+  <div class="cases-grid">
+    <div class="case-card">
+      <div class="case-num">01</div>
+      <span class="case-tag">Vendor Risk and Compliance</span>
+      <div class="case-title">Due Diligence Framework That Mitigated $50K in Vendor Compliance Risk</div>
+      <div class="case-body">Most clients had no structured approach to vendor risk management. Leading a 5-person audit team, I built evaluation frameworks assessing financial, operational, and regulatory compliance for each vendor, identified $50K+ in risk exposure, and delivered corrective action roadmaps with clear accountability checkpoints to each client.</div>
+      <div class="case-result">
+        <div class="case-result-n">$50K+</div>
+        <div class="case-result-t">in compliance risk identified and routed to corrective action</div>
+      </div>
+    </div>
+
+    <div class="case-card">
+      <div class="case-num">02</div>
+      <span class="case-tag">Invoice Reconciliation and Reporting</span>
+      <div class="case-title">Power BI Dashboard That Resolved Billing Disputes and Unblocked $30K in One Week</div>
+      <div class="case-body">Invoice and PO data were misaligned across active projects, freezing disbursements entirely. I built a Power BI dashboard reconciling ERP and Excel data line by line, surfaced the exact billing discrepancies causing each dispute, and gave leadership a clear actionable view within 7 days. Funding was released immediately.</div>
+      <div class="case-result">
+        <div class="case-result-n">$30K+</div>
+        <div class="case-result-t">in frozen funding unblocked within 7 days of dashboard deployment</div>
+      </div>
+    </div>
+
+    <div class="case-card">
+      <div class="case-num">03</div>
+      <span class="case-tag">SOP Development and Standardization</span>
+      <div class="case-title">Procurement SOP Library Adopted Across 30+ Client Engagements</div>
+      <div class="case-body">Each client managed procurement differently with no shared documentation or consistent audit trail. I developed SOP templates, procurement process guides, and vendor management documentation designed to be practical, compliant, and easy to follow. The library was adopted across all 30+ client engagements and became the standard for all new engagements.</div>
+      <div class="case-result">
+        <div class="case-result-n">30+</div>
+        <div class="case-result-t">client operations standardized under one procurement SOP framework</div>
+      </div>
+    </div>
+
+    <div class="case-card">
+      <div class="case-num">04</div>
+      <span class="case-tag">Vendor Onboarding and Lifecycle</span>
+      <div class="case-title">Vendor Workflow Redesign That Cut Payment Cycles to Under 2 Weeks</div>
+      <div class="case-body">Vendor payment delays were chronic due to inconsistent onboarding, missing documentation, and no structured PO prioritization. I redesigned the vendor onboarding workflow, established structured PO processing in Tally ERP, and served as the primary liaison between 10+ suppliers and internal stakeholders, cutting the payment cycle from 21+ days to under 2 weeks.</div>
+      <div class="case-result">
+        <div class="case-result-n">under 2 wks</div>
+        <div class="case-result-t">vendor payment cycle after workflow and onboarding redesign</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="skills-section">
+  <div class="section-inner">
+    <div class="section-eyebrow">Skills and Tools</div>
+    <div class="section-title">Everything the role<br>requires. Already applied.</div>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <div class="skill-group-title">Procurement and Vendor Management</div>
+        <div class="skill-list">Vendor Lifecycle Management · Supplier Onboarding and Offboarding · Third-Party Governance · SLA/KPI Monitoring · Due Diligence Reviews · Contract Management · RFQ and PO Processing · SOP Development · Spend Analysis · Procurement Compliance</div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Analytics and Reporting</div>
+        <div class="skill-list">Power BI (Advanced DAX) · Microsoft Excel (Advanced: Pivot Tables, VLOOKUP) · Tableau · Data Analysis · Expenditure Tracking · Budget Variance Analysis · Standard and Ad Hoc Reporting · Dashboard Development</div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Systems and Tools</div>
+        <div class="skill-list">Tally ERP (hands-on) · SAP ERP (academic simulation) · Microsoft Office Suite · ERP-based Invoice Reconciliation · Business Systems Support · Process Documentation</div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Education and Credentials</div>
+        <div class="skill-list">MBA (STEM), Supply Chain Management — Michigan State University, GPA 3.77, May 2026 · Bachelor of Commerce, International Business · VP, Graduate Supply Chain Management Association · MBA Fellowship Recipient · Lean Six Sigma Yellow Belt (In Progress) · Supply Chain Foundation: Analytics · Power BI Essentials</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="contact" class="cta-section">
+  <div class="cta-inner">
+    <div class="cta-left">
+      <div class="cta-eyebrow">Let's Connect</div>
+      <div class="cta-title">Ready to bring procurement<br>discipline to <em>Troutman<br>Pepper Locke.</em></div>
+    </div>
+    <div class="cta-right">
+      <div class="cta-p">I would love a <strong>20-minute call this week</strong> to walk through any of these stories or learn more about what this role needs right now.</div>
+      <div class="cta-btns">
+        <a href="/cdn-cgi/l/email-protection#fb909a8f8f9a889acabb96888ed59e9f8ec4888e99919e988fc6af89948e8f969a95dbab9e8b8b9e89dbb79498909edba89e95929489dbab8994988e899e969e958fdbb48b9e899a8f92949588dbba959a9782888f" class="btn-red">Email Me This Week</a>
+        <a href="tel:+15175997312" class="btn-ghost">Call: (517) 599-7312</a>
+      </div>
+      <div class="cta-contacts">
+        <a href="https://www.linkedin.com/in/saipriyakatta/" class="cta-contact" target="_blank"><span class="cta-contact-ico">↗</span> linkedin.com/in/saipriyakatta</a>
+        <span class="cta-contact"><span class="cta-contact-ico">✉</span> <a href="/cdn-c
